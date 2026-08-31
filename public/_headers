@@ -1,0 +1,9 @@
+# Cache lâu dài cho file có hash (Vite) và ảnh tĩnh
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=2592000
+
+/fonts.googleapis.com/*
+  Cache-Control: public, max-age=86400

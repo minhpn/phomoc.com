@@ -11,6 +11,10 @@ npm run build   # build production vào thư mục dist/
 npm run preview # xem thử bản build production
 ```
 
+## Deploy lên Cloudflare Pages + trỏ domain phomoc.com
+
+Xem hướng dẫn từng bước trong **[DEPLOY.md](./DEPLOY.md)** — gồm cả CI/CD tự động khi push code / tạo PR vào branch `master`.
+
 ## Sửa nội dung ở đâu?
 
 Toàn bộ nội dung website nằm trong **một file duy nhất**: `src/data/siteConfig.js`
