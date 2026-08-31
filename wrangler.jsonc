@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "phomoc",
+  "compatibility_date": "2026-08-01",
+  "assets": {
+    // Thư mục output sau khi `npm run build` — Cloudflare sẽ phục vụ site từ đây
+    "directory": "./dist",
+    // SPA: mọi path không tìm thấy đều trả về index.html
+    "not_found_handling": "single-page-application",
+    "html_handling": "auto-trailing-slash"
+  }
+}
