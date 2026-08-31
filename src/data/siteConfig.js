@@ -80,16 +80,16 @@ export const SIGNATURES = [
     tag: 'Đặc trưng',
   },
   {
-    name: 'Phở gà lăn',
+    name: 'Phở gà lẫn',
     image: '/images/dishes/pho-ga-lan.jpg',
-    desc: 'Thịt gà lăn săn nhẹ giữ trọn vị ngọt, rau thơm tươi xanh đúng chuẩn quán Bắc.',
+    desc: 'Thịt gà lẫn săn nhẹ giữ trọn vị ngọt, rau thơm tươi xanh đúng chuẩn quán Bắc.',
     priceFrom: 60,
     tag: 'Được yêu thích',
   },
   {
-    name: 'Cơm gà lăn',
+    name: 'Cơm gà lẫn',
     image: '/images/dishes/com-ga-lan-01.jpg',
-    desc: 'Cơm dẻo thơm, gà lăn vàng đều, trứng non ốp la và nước sốt gừng đậm đà.',
+    desc: 'Cơm dẻo thơm, gà lẫn vàng đều, trứng non ốp la và nước sốt gừng đậm đà.',
     priceFrom: 60,
     tag: 'Món nước 2',
   },
@@ -120,7 +120,7 @@ export const MENU = [
     label: 'Phở – Bún – Miến nước',
     icon: '🥣',
     items: [
-      { name: 'Thịt lăn / Lươn / Phao câu', price: 55 },
+      { name: 'Thịt lẫn / Lươn / Phao câu', price: 55 },
       { name: 'Nhiều thịt', price: 70 },
       { name: 'Thịt đùi', price: 70 },
       { name: 'Thịt cánh', price: 70 },
@@ -136,7 +136,7 @@ export const MENU = [
     label: 'Phở – Bún – Miến trộn',
     icon: '🍜',
     items: [
-      { name: 'Thịt lăn / Lươn / Phao câu', price: 60 },
+      { name: 'Thịt lẫn / Lươn / Phao câu', price: 60 },
       { name: 'Nhiều thịt', price: 75 },
       { name: 'Thịt đùi', price: 75 },
       { name: 'Thịt cánh', price: 75 },
@@ -151,7 +151,7 @@ export const MENU = [
     label: 'Cháo',
     icon: '🍚',
     items: [
-      { name: 'Thịt lăn / Lươn / Phao câu', price: 55 },
+      { name: 'Thịt lẫn / Lươn / Phao câu', price: 55 },
       { name: 'Nhiều thịt', price: 70 },
       { name: 'Thịt đùi', price: 70 },
       { name: 'Thịt cánh', price: 70 },
@@ -166,7 +166,7 @@ export const MENU = [
     label: 'Cơm',
     icon: '🍛',
     items: [
-      { name: 'Thịt lăn / Lươn / Phao câu', price: 60 },
+      { name: 'Thịt lẫn / Lươn / Phao câu', price: 60 },
       { name: 'Nhiều thịt', price: 80 },
       { name: 'Thịt đùi', price: 75 },
       { name: 'Thịt cánh', price: 75 },
@@ -180,7 +180,7 @@ export const MENU = [
     label: 'Xôi gà xào nấm',
     icon: '🍙',
     items: [
-      { name: 'Thịt lăn / Lươn / Phao câu', price: 60 },
+      { name: 'Thịt lẫn / Lươn / Phao câu', price: 60 },
       { name: 'Nhiều thịt', price: 80 },
       { name: 'Thịt đùi', price: 75 },
       { name: 'Thịt cánh', price: 75 },
@@ -251,12 +251,12 @@ export const GALLERY = [
   { src: '/images/dishes/pho-bo.jpg', alt: 'Tô phở bò nóng hổi tại Phở Mộc' },
   { src: '/images/quan-02.jpg', alt: 'Không gian quán Phở Mộc về đêm' },
   { src: '/images/dishes/pho-tron.jpg', alt: 'Phở trộn thịt đùi trứng non' },
-  { src: '/images/dishes/com-ga-lan-02.jpg', alt: 'Cơm gà lăn trứng non' },
+  { src: '/images/dishes/com-ga-lan-02.jpg', alt: 'Cơm gà lẫn trứng non' },
   { src: '/images/quan-01.jpg', alt: 'Mặt tiền quán Phở Mộc ban ngày' },
   { src: '/images/dishes/pho-ga.jpg', alt: 'Phở gà ta hành lá tươi' },
   { src: '/images/dishes/ga-chat.jpg', alt: 'Gà ta chặt nguyên phần' },
-  { src: '/images/dishes/pho-ga-lan.jpg', alt: 'Phở gà lăn' },
-  { src: '/images/dishes/com-ga-lan-01.jpg', alt: 'Cơm gà lăn đủ vị' },
+  { src: '/images/dishes/pho-ga-lan.jpg', alt: 'Phở gà lẫn' },
+  { src: '/images/dishes/com-ga-lan-01.jpg', alt: 'Cơm gà lẫn đủ vị' },
 ]
 
 // ------------------------------------------------------------
@@ -280,25 +280,25 @@ export const REVIEWS = [
     name: 'Thu Hằng',
     source: 'GrabFood',
     rating: 5,
-    text: 'Cơm gà lăn đỉnh thật sự, gà săn ngon, trứng non béo mềm. Giá cả hợp lý so với khu Smart City.',
+    text: 'Cơm gà lẫn đỉnh thật sự, gà săn ngon, trứng non béo mềm. Giá cả hợp lý so với khu Smart City.',
   },
   {
     name: 'Đức Long',
     source: 'Google Maps',
     rating: 4,
-    text: 'Phở trộn cực kỳ đậm đà, quẩy giòn tan. Trưa đông một chút nhưng phục vụ nhanh, thái độ vui vẻ.',
+    text: 'Phở trộn đậm đà, quẩy giòn tan đúng vị. Quán mới mở nên giờ đông hơi phải chờ một chút, nhưng món ngon đáng công đợi. Sẽ ghé lại ủng hộ!',
   },
   {
     name: 'Ngọc Mai',
     source: 'ShopeeFood',
     rating: 5,
-    text: 'Xôi gà xào nấm thơm lừng, ăn sáng no căng cả buổi. Bé nhà mình cũng mê phần cháo thịt xương nhừ.',
+    text: 'Cháo thịt xương nhừ nấu mềm nhừ, đút cho bé ăn rất hợp. Nhà mình thì mê tô phở gà da vàng, thịt ngọt. Sáng nào cũng đặt!',
   },
   {
     name: 'Thanh Tùng',
     source: 'GrabFood',
     rating: 5,
-    text: 'Gà chặt nguyên phần dùng cho họp nhóm văn phòng, ai cũng khen. Nước chắm chuẩn vị, sẽ đặt tiếp.',
+    text: 'Gà chặt nguyên phần dùng cho họp nhóm văn phòng, ai cũng khen. Nước chấm chuẩn vị, sẽ đặt tiếp.',
   },
 ]
 

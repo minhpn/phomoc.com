@@ -70,7 +70,7 @@ export default function Hero() {
           <div className="hero__photo-wrap">
             <img
               src="/images/dishes/pho-ga-lan.jpg"
-              alt="Tô phở gà lăn nóng hổi tại Phở Mộc"
+              alt="Tô phở gà lẫn nóng hổi tại Phở Mộc"
               className="hero__photo"
               fetchpriority="high"
             />
