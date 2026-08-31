@@ -29,11 +29,13 @@ Thư mục output (`dist`) **không có ô cấu hình trong UI** — nó nằm 
   "compatibility_date": "2026-08-01",
   "assets": {
     "directory": "./dist",                            // ← thư mục output nằm ở đây
-    "not_found_handling": "single-page-application",  // SPA fallback
-    "html_handling": "auto-trailing-slash"
+    "not_found_handling": "single-page-application"   // SPA fallback — thay cho _redirects của Pages
   }
 }
 ```
+
+> ⚠️ **Không tạo file `public/_redirects`** với luật `/* /index.html 200` — Workers Assets
+> sẽ từ chối deploy vì "Infinite loop detected" (SPA fallback đã lo bởi cấu hình trên).
 
 **Các bước sửa xong:**
 
@@ -135,7 +137,8 @@ git push            # ← tự build + deploy production
 | Vẫn thấy "Hello world" | Deploy command chưa phải `npx wrangler deploy`, hoặc thiếu `wrangler.jsonc` trong repo, hoặc build chưa chạy lại |
 | Build fail `Could not find package.json` | Root directory không được để `/dist` — phải để trống |
 | Build fail `Node ≥ 20 required` | Thiếu biến `NODE_VERSION=22` |
-| Vào path lạ bị 404 | Đã có `not_found_handling: "single-page-application"` + file `public/_redirects` — đừng xóa |
+| Deploy fail `Invalid _redirects configuration` | Có file `public/_redirects` trong repo (chuẩn Pages cũ) — Workers Assets không chấp nhận luật `/* /index.html 200`. Xóa file này; SPA fallback đã có trong `wrangler.jsonc` |
+| Vào path lạ bị 404 | Kiểm tra `wrangler.jsonc` có `not_found_handling: "single-page-application"` |
 | Domain không Active | Kiểm tra DNS có record `phomoc.com → phomoc.betapcode.workers.dev` (CNAME, bật Proxy 🟠) |
 | Ảnh cũ sau khi deploy | Cache 30 ngày (`public/_headers`) → `Ctrl/Cmd+Shift+R` |
 
