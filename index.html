@@ -11,6 +11,21 @@
     />
     <meta name="theme-color" content="#1B6B33" />
 
+    <!-- SEO: cho phép index + chuẩn hóa mọi phiên bản (www, workers.dev) về domain chính -->
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://phomoc.com/" />
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YF65ZQMW1P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-YF65ZQMW1P');
+    </script>
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Phở Mộc — Tươi từ tâm, xanh trong vị" />
@@ -18,7 +33,9 @@
       property="og:description"
       content="Phở · Bún · Miến · Cơm · Cháo — nguyên liệu tươi mỗi ngày, nước dùng ngọt thanh hầm từ xương. Đặt món ngay qua ShopeeFood & GrabFood."
     />
-    <meta property="og:image" content="/images/banner-promo.jpg" />
+    <meta property="og:url" content="https://phomoc.com/" />
+    <meta property="og:site_name" content="Phở Mộc" />
+    <meta property="og:image" content="https://phomoc.com/images/banner-promo.jpg" />
     <meta property="og:locale" content="vi_VN" />
 
     <!-- Fonts: Be Vietnam Pro (thân/headline) + Pacifico (chữ signature theo logo) -->
@@ -35,6 +52,8 @@
         "@type": "Restaurant",
         "name": "Phở Mộc",
         "slogan": "Tươi từ tâm - Xanh trong vị",
+        "url": "https://phomoc.com/",
+        "image": "https://phomoc.com/images/logo-slogan.png",
         "servesCuisine": ["Việt Nam", "Phở", "Bún", "Cơm"],
         "telephone": "+84988242369",
         "address": {
@@ -44,6 +63,21 @@
           "postalCode": "10000",
           "addressCountry": "VN"
         },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "07:15",
+            "closes": "14:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "18:00",
+            "closes": "22:00"
+          }
+        ],
+        "sameAs": ["https://www.facebook.com/phomocbb", "https://www.tiktok.com/@ph.mc42"],
         "priceRange": "20k - 300k"
       }
     </script>

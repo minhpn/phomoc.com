@@ -1,0 +1,6 @@
+# Phở Mộc — cho phép mọi bot tìm kiếm quét toàn bộ site
+User-agent: *
+Allow: /
+
+# Sơ đồ trang giúp Google index nhanh và đủ
+Sitemap: https://phomoc.com/sitemap.xml
