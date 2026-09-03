@@ -15,7 +15,7 @@ export const CONTACT = {
   phone: '0988 242 369',
   phoneHref: 'tel:+84988242369',
   address:
-    'S06 Phân khu The Miami, Vinhomes Smart City, 01 GS5, Tây Mỗ, Hà Nội 10000',
+    'S06, Tòa GS5, The Miami, Vinhomes Smart City, Tây Mỗ, Nam Từ Liêm, Hà Nội',
   hours: [
     { days: 'Sáng', time: '07:15 – 14:30' },
     { days: 'Chiều tối', time: '18:00 – 22:00' },

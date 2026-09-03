@@ -45,7 +45,10 @@ Toàn bộ nội dung website nằm trong **một file duy nhất**: `src/data/s
 └── prd/                    # assets gốc (không dùng trực tiếp)
 ```
 
+
+
 ## Ghi chú
 
 - Giờ mở cửa: sáng `07:15 – 14:30`, chiều tối `17:00 – 22:00` — chỉnh trong `CONTACT.hours` nếu thay đổi.
 - Tên món được chuẩn hóa chính tả so với ảnh menu ("Thịt lăn", "Đùi gà gốc ta") — đối chiếu lại với quán nếu cần.
+

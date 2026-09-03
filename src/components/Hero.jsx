@@ -23,8 +23,9 @@ export default function Hero() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="hero__desc">
-              Nước dùng hầm từ xương gà nhiều giờ, rau thơm tươi xanh mỗi sáng — Phở Mộc mang
-              hương vị chuẩn Bắc đến tận khu Vinhomes Smart City. Ghé quán hoặc đặt giao ngay!
+              Nước dùng hầm từ xương gà nhiều giờ, rau thơm tươi xanh mỗi sáng — Phở Mộc
+              chuyên gà (phở,bún,miến,cơm,cháo), mang hương vị chuẩn Bắc đến
+              tận khu Vinhomes Smart City. Ghé quán hoặc đặt giao ngay!
             </p>
           </Reveal>
           <Reveal delay={0.24}>
