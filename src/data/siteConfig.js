@@ -159,7 +159,7 @@ export const MENU_BOARD = {
         '국물 국수 (퍼·쌀국수·당면)'
       ),
       items: [
-        { name: T('Thịt lăn / Lươn / Phao câu', 'Marinated meat / Eel / Chicken gizzard', '腌肉 / 鳝鱼 / 鸡胗', '양념육 / 장어 / 닭모래주머니'), price: 55 },
+        { name: T('Thịt lẫn / Lườn / Phao câu', 'Mixed meat / Chicken breast / Chicken gizzard', '什锦肉 / 鸡胸肉 / 鸡胗', '모둠고기 / 닭가슴살 / 닭모래주머니'), price: 55 },
         { name: T('Nhiều thịt', 'Extra meat', '多肉', '고기 많이'), price: 70 },
         { name: T('Thịt đùi', 'Chicken thigh', '鸡腿肉', '닭다리살'), price: 70 },
         { name: T('Thịt cánh', 'Chicken wing', '鸡翅肉', '닭날개살'), price: 70 },
@@ -167,7 +167,7 @@ export const MENU_BOARD = {
         { name: T('Thịt đùi – Cánh', 'Thigh & Wing', '鸡腿 · 鸡翅', '닭다리 · 닭날개'), price: 100 },
         { name: T('Thịt bò tái', 'Rare beef', '生牛肉', '레어 소고기'), price: 55 },
         { name: T('Thịt xương nhừ', 'Stewed bone-in meat', '炖烂带骨肉', '푹 익힌 뼈고기'), price: 55 },
-        { name: T('Mọc gà lăn', 'Marinated chicken meatballs', '腌鸡肉丸', '양념 닭고기 완자'), price: 55 },
+        { name: T('Mọc gà lẫn', 'Chicken meatballs', '鸡肉丸', '닭고기 완자'), price: 55 },
         { name: T('Phở không', 'Plain phở (no toppings)', '净河粉', '퍼 (고기 없이)'), price: 20 },
         { name: T('Phở trẻ em', "Kids' phở", '儿童河粉', '어린이 퍼'), price: 25 },
       ],
@@ -182,7 +182,7 @@ export const MENU_BOARD = {
         '비빔 국수 (퍼·쌀국수·당면)'
       ),
       items: [
-        { name: T('Thịt lăn / Lươn / Phao câu', 'Marinated meat / Eel / Chicken gizzard', '腌肉 / 鳝鱼 / 鸡胗', '양념육 / 장어 / 닭모래주머니'), price: 60 },
+        { name: T('Thịt lẫn / Lườn / Phao câu', 'Mixed meat / Chicken breast / Chicken gizzard', '什锦肉 / 鸡胸肉 / 鸡胗', '모둠고기 / 닭가슴살 / 닭모래주머니'), price: 60 },
         { name: T('Nhiều thịt', 'Extra meat', '多肉', '고기 많이'), price: 75 },
         { name: T('Thịt đùi', 'Chicken thigh', '鸡腿肉', '닭다리살'), price: 75 },
         { name: T('Thịt cánh', 'Chicken wing', '鸡翅肉', '닭날개살'), price: 75 },
@@ -196,7 +196,7 @@ export const MENU_BOARD = {
       icon: '🍚',
       title: T('Cháo', 'Congee', '粥', '죽'),
       items: [
-        { name: T('Thịt lăn / Lươn / Phao câu', 'Marinated meat / Eel / Chicken gizzard', '腌肉 / 鳝鱼 / 鸡胗', '양념육 / 장어 / 닭모래주머니'), price: 55 },
+        { name: T('Thịt lẫn / Lườn / Phao câu', 'Mixed meat / Chicken breast / Chicken gizzard', '什锦肉 / 鸡胸肉 / 鸡胗', '모둠고기 / 닭가슴살 / 닭모래주머니'), price: 55 },
         { name: T('Nhiều thịt', 'Extra meat', '多肉', '고기 많이'), price: 70 },
         { name: T('Thịt đùi', 'Chicken thigh', '鸡腿肉', '닭다리살'), price: 70 },
         { name: T('Thịt cánh', 'Chicken wing', '鸡翅肉', '닭날개살'), price: 70 },
@@ -211,7 +211,7 @@ export const MENU_BOARD = {
       icon: '🍛',
       title: T('Cơm', 'Rice', '米饭', '밥'),
       items: [
-        { name: T('Thịt lăn / Lươn / Phao câu', 'Marinated meat / Eel / Chicken gizzard', '腌肉 / 鳝鱼 / 鸡胗', '양념육 / 장어 / 닭모래주머니'), price: 60 },
+        { name: T('Thịt lẫn / Lườn / Phao câu', 'Mixed meat / Chicken breast / Chicken gizzard', '什锦肉 / 鸡胸肉 / 鸡胗', '모둠고기 / 닭가슴살 / 닭모래주머니'), price: 60 },
         { name: T('Nhiều thịt', 'Extra meat', '多肉', '고기 많이'), price: 80 },
         { name: T('Thịt đùi', 'Chicken thigh', '鸡腿肉', '닭다리살'), price: 75 },
         { name: T('Thịt cánh', 'Chicken wing', '鸡翅肉', '닭날개살'), price: 75 },
@@ -223,7 +223,7 @@ export const MENU_BOARD = {
       icon: '🍙',
       title: T('Xôi gà xào nấm', 'Sticky Rice with Chicken', '鸡肉蘑菇糯米饭', '닭버섯 찹쌀밥'),
       items: [
-        { name: T('Thịt lăn / Lươn / Phao câu', 'Marinated meat / Eel / Chicken gizzard', '腌肉 / 鳝鱼 / 鸡胗', '양념육 / 장어 / 닭모래주머니'), price: 60 },
+        { name: T('Thịt lẫn / Lườn / Phao câu', 'Mixed meat / Chicken breast / Chicken gizzard', '什锦肉 / 鸡胸肉 / 鸡胗', '모둠고기 / 닭가슴살 / 닭모래주머니'), price: 60 },
         { name: T('Nhiều thịt', 'Extra meat', '多肉', '고기 많이'), price: 80 },
         { name: T('Thịt đùi', 'Chicken thigh', '鸡腿肉', '닭다리살'), price: 75 },
         { name: T('Thịt cánh', 'Chicken wing', '鸡翅肉', '닭날개살'), price: 75 },
