@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Highlights from './components/Highlights.jsx'
@@ -11,8 +12,12 @@ import Delivery from './components/Delivery.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 import FloatingBar from './components/FloatingBar.jsx'
+import MenuBoardFab from './components/MenuBoardFab.jsx'
+import MenuBoard from './components/MenuBoard.jsx'
 
 export default function App() {
+  const [menuBoardOpen, setMenuBoardOpen] = useState(false)
+
   return (
     <>
       <Header />
@@ -30,6 +35,8 @@ export default function App() {
       </main>
       <Footer />
       <FloatingBar />
+      <MenuBoardFab onClick={() => setMenuBoardOpen(true)} />
+      <MenuBoard open={menuBoardOpen} onClose={() => setMenuBoardOpen(false)} />
     </>
   )
 }

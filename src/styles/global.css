@@ -1785,6 +1785,518 @@ button {
 }
 
 /* ============================================================
+   MENU FAB — nút nổi góc trái, mở bảng thực đơn đa ngôn ngữ
+   ============================================================ */
+.menu-fab {
+  position: fixed;
+  top: calc(var(--header-h) + 14px);
+  left: 14px;
+  z-index: 55;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px 11px 15px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--green-800);
+  font-weight: 700;
+  font-size: 14px;
+  border: 1.5px solid rgba(27, 107, 51, 0.22);
+  box-shadow: 0 10px 26px rgba(27, 107, 51, 0.24);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(27, 107, 51, 0.3);
+}
+
+.menu-fab:active {
+  transform: scale(0.96);
+}
+
+/* ============================================================
+   MENU BOARD — bảng thực đơn đa ngôn ngữ (y hệt bảng menu giấy)
+   ============================================================ */
+.menu-board {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  overflow-y: auto;
+  background: rgba(16, 38, 24, 0.68);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  padding: clamp(12px, 3vw, 32px);
+  animation: fadeIn 0.25s ease;
+}
+
+.menu-board__page {
+  max-width: 1480px;
+  margin-inline: auto;
+}
+
+/* Thanh công cụ: chọn ngôn ngữ + đóng (dính trên khi cuộn) */
+.menu-board__toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  background: rgba(13, 40, 22, 0.86);
+  border: 1px solid rgba(139, 195, 74, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.menu-board__langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.menu-board__lang {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: rgba(253, 248, 236, 0.85);
+  border: 1.5px solid rgba(253, 248, 236, 0.28);
+  background: rgba(255, 255, 255, 0.06);
+  transition: all 0.2s ease;
+}
+
+.menu-board__lang:hover {
+  border-color: rgba(253, 248, 236, 0.6);
+  color: var(--cream);
+}
+
+.menu-board__lang.is-active {
+  background: var(--cream);
+  color: var(--green-900);
+  border-color: var(--cream);
+}
+
+.menu-board__close {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
+  transition: background 0.2s ease;
+}
+
+.menu-board__close:hover {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+/* Khung giấy menu: viền kép + góc trang trí như bản in */
+.menu-board__frame {
+  position: relative;
+  background: #faf5e6;
+  border: 3px solid var(--green-900);
+  border-radius: 26px;
+  box-shadow:
+    inset 0 0 0 6px #faf5e6,
+    inset 0 0 0 7.5px rgba(27, 107, 51, 0.5),
+    0 30px 80px rgba(0, 0, 0, 0.45);
+  padding: clamp(20px, 3vw, 44px);
+}
+
+.menu-board__corner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 4px solid var(--green-800);
+  pointer-events: none;
+}
+
+.menu-board__corner--tl {
+  top: 12px;
+  left: 12px;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 12px 0 0 0;
+}
+
+.menu-board__corner--tr {
+  top: 12px;
+  right: 12px;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 12px 0 0;
+}
+
+.menu-board__corner--bl {
+  bottom: 12px;
+  left: 12px;
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 12px;
+}
+
+.menu-board__corner--br {
+  bottom: 12px;
+  right: 12px;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 12px 0;
+}
+
+/* Đầu bảng: tên quán + slogan + wifi/điện thoại */
+.menu-board__head {
+  text-align: center;
+  margin-bottom: clamp(26px, 3vw, 38px);
+}
+
+.menu-board__title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(42px, 6.5vw, 80px);
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  line-height: 1.05;
+  color: var(--green-900);
+}
+
+.menu-board__slogan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 4px;
+  font-family: var(--font-script);
+  font-size: clamp(19px, 2.4vw, 28px);
+  color: var(--green-800);
+}
+
+.menu-board__slogan .menu-board__leaf {
+  color: var(--leaf);
+  flex-shrink: 0;
+}
+
+.menu-board__meta {
+  margin: 18px auto 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 26px;
+  border: 2px solid var(--green-800);
+  border-radius: 999px;
+  padding: 9px 24px;
+  color: var(--green-900);
+  font-weight: 700;
+  font-size: clamp(13px, 1.5vw, 16px);
+}
+
+.menu-board__meta span,
+.menu-board__meta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-board__meta svg {
+  flex-shrink: 0;
+  color: var(--green-700);
+}
+
+.menu-board__meta a:hover {
+  text-decoration: underline;
+}
+
+/* Lưới các mục menu */
+.menu-board__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 14px;
+  row-gap: 30px;
+  align-items: stretch;
+}
+
+.menu-board__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fdfaf0;
+  border: 2px solid rgba(27, 107, 51, 0.6);
+  border-radius: 14px;
+  padding: 44px 14px 16px;
+  box-shadow: 0 2px 0 rgba(27, 107, 51, 0.14);
+}
+
+.menu-board__card--wide {
+  grid-column: span 2;
+}
+
+/* Nẹp tiêu đề xanh đậm ôm lên mép thẻ như bản in */
+.menu-board__card-title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: calc(100% - 14px);
+  background: var(--green-900);
+  color: var(--cream);
+  font-size: clamp(10.5px, 0.95vw, 13px);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.25;
+  padding: 6px 14px;
+  border-radius: 10px 13px 10px 15px;
+  box-shadow: 0 3px 10px rgba(13, 59, 28, 0.3);
+  text-wrap: balance;
+}
+
+.menu-board__free {
+  text-align: center;
+  color: var(--green-800);
+  margin-bottom: 12px;
+  line-height: 1.45;
+}
+
+.menu-board__free strong {
+  display: block;
+  color: var(--green-900);
+  font-size: 1.02em;
+}
+
+.menu-board__free span {
+  font-size: 0.86em;
+  color: var(--brown-600);
+}
+
+.menu-board__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.menu-board__card--wide .menu-board__list {
+  display: block;
+  columns: 2;
+  column-gap: 26px;
+}
+
+.menu-board__card--wide .menu-board__item {
+  break-inside: avoid;
+}
+
+.menu-board__item {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  font-size: clamp(13px, 1.2vw, 15px);
+  line-height: 1.5;
+}
+
+.menu-board__item-name {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.menu-board__item-note {
+  font-style: normal;
+  font-size: 0.85em;
+  color: var(--brown-600);
+}
+
+.menu-board__dots {
+  flex: 1;
+  min-width: 12px;
+  border-bottom: 2px dotted rgba(27, 107, 51, 0.45);
+  transform: translateY(-3px);
+}
+
+.menu-board__item-price {
+  font-weight: 800;
+  color: var(--green-900);
+  white-space: nowrap;
+}
+
+.menu-board__item-price small {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: var(--green-700);
+}
+
+/* Thẻ Cháo cho bé */
+.menu-board__baby-art {
+  text-align: center;
+  font-size: 30px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.menu-board__baby-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.menu-board__baby-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(13px, 1.2vw, 15px);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.menu-board__baby-list svg {
+  color: var(--green-600);
+  flex-shrink: 0;
+}
+
+.menu-board__baby-notice {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--green-700), var(--green-800));
+  color: var(--cream);
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9em;
+  line-height: 1.45;
+}
+
+/* Thẻ Lưu ý */
+.menu-board__notes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 14px;
+  flex: 1;
+}
+
+.menu-board__notes li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.menu-board__note-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  color: var(--green-800);
+}
+
+.menu-board__notes strong {
+  display: block;
+  font-size: 0.95em;
+  color: var(--green-900);
+  line-height: 1.4;
+}
+
+.menu-board__notes p {
+  font-size: 0.85em;
+  color: var(--brown-700);
+  line-height: 1.5;
+  margin-top: 2px;
+}
+
+/* Dòng chúc cuối bảng */
+.menu-board__footer {
+  margin-top: clamp(22px, 2.6vw, 32px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  font-family: var(--font-script);
+  font-size: clamp(18px, 2.2vw, 26px);
+  color: var(--green-900);
+}
+
+.menu-board__footer .menu-board__leaf {
+  color: var(--leaf);
+  flex-shrink: 0;
+}
+
+/* Ghi chú món trên tab thực đơn trang chủ */
+.menu__item-note {
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--brown-400);
+}
+
+/* ---------- Menu board responsive ---------- */
+@media (max-width: 1240px) {
+  .menu-board__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .menu-board__card--wide .menu-board__list {
+    columns: 1;
+  }
+}
+
+@media (max-width: 860px) {
+  .menu-board__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .menu-board__grid {
+    grid-template-columns: 1fr;
+    row-gap: 26px;
+  }
+
+  .menu-board__card--wide {
+    grid-column: auto;
+  }
+
+  .menu-board__toolbar {
+    padding: 8px 10px;
+    border-radius: 14px;
+  }
+
+  .menu-board__lang {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .menu-board__close {
+    width: 38px;
+    height: 38px;
+  }
+
+  .menu-fab {
+    padding: 10px 14px 10px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-board {
+    animation: none;
+  }
+
+  .menu-fab {
+    transition: none;
+  }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1080px) {

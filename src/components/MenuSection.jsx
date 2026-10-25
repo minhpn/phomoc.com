@@ -43,11 +43,20 @@ export default function MenuSection() {
             <ul className="menu__list">
               {category.items.map((item) => (
                 <li key={item.name} className="menu__item">
-                  <span className="menu__item-name">{item.name}</span>
+                  <span className="menu__item-name">
+                    {item.name}
+                    {item.note && <em className="menu__item-note"> ({item.note})</em>}
+                  </span>
                   <span className="menu__dots" aria-hidden="true" />
                   <span className="menu__item-price">
-                    {item.price}k
-                    {item.unit && <small>{item.unit}</small>}
+                    {item.free ? (
+                      'Miễn phí'
+                    ) : (
+                      <>
+                        {item.price}k
+                        {item.unit && <small>{item.unit}</small>}
+                      </>
+                    )}
                   </span>
                 </li>
               ))}

@@ -111,114 +111,239 @@ export const SIGNATURES = [
 ]
 
 // ------------------------------------------------------------
-// THỰC ĐƠN — bóc tách từ ảnh thực đơn phomoc-menu.jpg
-// Giá: đơn vị nghìn đồng (k)
+// BẢNG THỰC ĐƠN ĐA NGÔN NGỮ (MENU BOARD) — bóc tách từ bảng menu giấy 2026
+// Dùng cho màn hình "Xem thực đơn" (MenuBoard.jsx, y hệt bảng menu tại bàn).
+// - Mọi text là object { vi, en, zh, ko } — zh = tiếng Trung, ko = tiếng Hàn.
+// - Giá tính bằng nghìn đồng (55 = 55k). MENU ở trang chủ được DẪN XUẤT từ
+//   MENU_BOARD ở dưới cùng file này nên chỉ cần sửa ở đây là đủ.
 // ------------------------------------------------------------
-export const MENU = [
-  {
-    id: 'nuoc',
-    label: 'Phở – Bún – Miến nước',
-    icon: '🥣',
-    items: [
-      { name: 'Thịt lẫn / Lươn / Phao câu', price: 55 },
-      { name: 'Nhiều thịt', price: 70 },
-      { name: 'Thịt đùi', price: 70 },
-      { name: 'Thịt cánh', price: 70 },
-      { name: 'Mề – tràng – trứng', price: 55 },
-      { name: 'Thịt đùi – cánh', price: 100 },
-      { name: 'Thịt bò', price: 55 },
-      { name: 'Thịt xương nhừ', price: 55 },
-      { name: 'Phở không', price: 20 },
-    ],
-  },
-  {
-    id: 'tron',
-    label: 'Phở – Bún – Miến trộn',
-    icon: '🍜',
-    items: [
-      { name: 'Thịt lẫn / Lươn / Phao câu', price: 60 },
-      { name: 'Nhiều thịt', price: 75 },
-      { name: 'Thịt đùi', price: 75 },
-      { name: 'Thịt cánh', price: 75 },
-      { name: 'Mề – tràng – trứng', price: 60 },
-      { name: 'Thịt đùi – cánh', price: 105 },
-      { name: 'Thịt bò', price: 60 },
-      { name: 'Thịt xương nhừ', price: 55 },
-    ],
-  },
-  {
-    id: 'chao',
-    label: 'Cháo',
-    icon: '🍚',
-    items: [
-      { name: 'Thịt lẫn / Lươn / Phao câu', price: 55 },
-      { name: 'Nhiều thịt', price: 70 },
-      { name: 'Thịt đùi', price: 70 },
-      { name: 'Thịt cánh', price: 70 },
-      { name: 'Mề – tràng – trứng', price: 55 },
-      { name: 'Thịt đùi – cánh', price: 100 },
-      { name: 'Thịt bò', price: 55 },
-      { name: 'Thịt xương nhừ', price: 55 },
-    ],
-  },
-  {
-    id: 'com',
-    label: 'Cơm',
-    icon: '🍛',
-    items: [
-      { name: 'Thịt lẫn / Lươn / Phao câu', price: 60 },
-      { name: 'Nhiều thịt', price: 80 },
-      { name: 'Thịt đùi', price: 75 },
-      { name: 'Thịt cánh', price: 75 },
-      { name: 'Thịt đùi – cánh', price: 105 },
-      { name: 'Sườn rim nước dừa', price: 60 },
-      { name: 'Tôm rim thịt vai giòn', price: 60 },
-    ],
-  },
-  {
-    id: 'xoi',
-    label: 'Xôi gà xào nấm',
-    icon: '🍙',
-    items: [
-      { name: 'Thịt lẫn / Lươn / Phao câu', price: 60 },
-      { name: 'Nhiều thịt', price: 80 },
-      { name: 'Thịt đùi', price: 75 },
-      { name: 'Thịt cánh', price: 75 },
-      { name: 'Thịt đùi – cánh', price: 105 },
-    ],
-  },
-  {
-    id: 'douong',
-    label: 'Đồ uống',
-    icon: '🥤',
-    items: [
-      { name: 'Trà đá', price: 5 },
-      { name: 'Sâm dừa', price: 5 },
-      { name: 'Sữa đậu', price: 10 },
-      { name: 'Nước chanh tươi', price: 10 },
-      { name: 'Nước ép dưa hấu', price: 20 },
-      { name: 'Nước lọc', price: 10 },
-      { name: 'Nước ngọt các loại', price: 15 },
-      { name: 'Bia Heineken', price: 25 },
-      { name: 'Bia Tiger', price: 25 },
-    ],
-  },
-  {
-    id: 'dacbiet',
-    label: 'Đặc biệt – Gọi thêm',
-    icon: '⭐',
-    items: [
-      { name: 'Quẩy giòn / mềm (3 cái)', price: 5 },
-      { name: 'Phao câu gà', price: 10 },
-      { name: 'Chân gà luộc', price: 15, unit: 'k/cái' },
-      { name: 'Mề – tràng – trứng chan', price: 100 },
-      { name: 'Bỏ chán', price: 100 },
-      { name: 'Xương sườn nhừ', price: 100 },
-      { name: 'Đùi gà gốc ta', price: 150 },
-      { name: 'Gà chặt ½ con', price: 300 },
-    ],
-  },
+const T = (vi, en, zh, ko) => ({ vi, en, zh, ko })
+
+export const MENU_BOARD_LANGUAGES = [
+  { code: 'vi', label: 'Tiếng Việt', flag: '🇻🇳' },
+  { code: 'en', label: 'English', flag: '🇬🇧' },
+  { code: 'zh', label: '中文', flag: '🇨🇳' },
+  { code: 'ko', label: '한국어', flag: '🇰🇷' },
 ]
+
+export const MENU_BOARD = {
+  languages: MENU_BOARD_LANGUAGES,
+  label: T('Thực đơn', 'Menu', '菜单', '메뉴'),
+  title: 'PHỞ MỘC',
+  slogan: T(
+    'Tươi từ tâm — Xanh trong vị',
+    'Fresh from the heart — Freshness in every taste',
+    '鲜自心生 — 清新入味',
+    '마음에서 온 신선함 — 맛 속의 푸르름'
+  ),
+  wifi: { ssid: 'Pho Moc', pass: 'Phomoc06' },
+  wifiLabel: T('Wifi', 'Wifi', '无线网络', '와이파이'),
+  passLabel: T('Mật khẩu', 'Password', '密码', '비밀번호'),
+  phone: CONTACT.phone,
+  phoneHref: CONTACT.phoneHref,
+  phoneLabel: T('SĐT', 'Tel', '电话', '전화'),
+  footer: T(
+    'Kinh chúc Quý khách ngon miệng!',
+    'We wish you a delicious meal!',
+    '祝您用餐愉快！',
+    '맛있게 즐기세요!'
+  ),
+  categories: [
+    {
+      id: 'nuoc',
+      icon: '🥣',
+      title: T(
+        'Phở – Bún – Miến nước',
+        'Noodle Soup',
+        '汤粉类（河粉/米粉/粉丝）',
+        '국물 국수 (퍼·쌀국수·당면)'
+      ),
+      items: [
+        { name: T('Thịt lăn / Lươn / Phao câu', 'Marinated meat / Eel / Chicken gizzard', '腌肉 / 鳝鱼 / 鸡胗', '양념육 / 장어 / 닭모래주머니'), price: 55 },
+        { name: T('Nhiều thịt', 'Extra meat', '多肉', '고기 많이'), price: 70 },
+        { name: T('Thịt đùi', 'Chicken thigh', '鸡腿肉', '닭다리살'), price: 70 },
+        { name: T('Thịt cánh', 'Chicken wing', '鸡翅肉', '닭날개살'), price: 70 },
+        { name: T('Mề – Tràng – Trứng', 'Gizzard · Intestine · Egg', '鸡胗 · 鸡肠 · 蛋', '모래주머니 · 창자 · 달걀'), price: 55 },
+        { name: T('Thịt đùi – Cánh', 'Thigh & Wing', '鸡腿 · 鸡翅', '닭다리 · 닭날개'), price: 100 },
+        { name: T('Thịt bò tái', 'Rare beef', '生牛肉', '레어 소고기'), price: 55 },
+        { name: T('Thịt xương nhừ', 'Stewed bone-in meat', '炖烂带骨肉', '푹 익힌 뼈고기'), price: 55 },
+        { name: T('Mọc gà lăn', 'Marinated chicken meatballs', '腌鸡肉丸', '양념 닭고기 완자'), price: 55 },
+        { name: T('Phở không', 'Plain phở (no toppings)', '净河粉', '퍼 (고기 없이)'), price: 20 },
+        { name: T('Phở trẻ em', "Kids' phở", '儿童河粉', '어린이 퍼'), price: 25 },
+      ],
+    },
+    {
+      id: 'tron',
+      icon: '🍜',
+      title: T(
+        'Phở – Bún – Miến trộn',
+        'Mixed Noodles',
+        '拌粉类（河粉/米粉/粉丝）',
+        '비빔 국수 (퍼·쌀국수·당면)'
+      ),
+      items: [
+        { name: T('Thịt lăn / Lươn / Phao câu', 'Marinated meat / Eel / Chicken gizzard', '腌肉 / 鳝鱼 / 鸡胗', '양념육 / 장어 / 닭모래주머니'), price: 60 },
+        { name: T('Nhiều thịt', 'Extra meat', '多肉', '고기 많이'), price: 75 },
+        { name: T('Thịt đùi', 'Chicken thigh', '鸡腿肉', '닭다리살'), price: 75 },
+        { name: T('Thịt cánh', 'Chicken wing', '鸡翅肉', '닭날개살'), price: 75 },
+        { name: T('Mề – Tràng – Trứng', 'Gizzard · Intestine · Egg', '鸡胗 · 鸡肠 · 蛋', '모래주머니 · 창자 · 달걀'), price: 60 },
+        { name: T('Thịt đùi – Cánh', 'Thigh & Wing', '鸡腿 · 鸡翅', '닭다리 · 닭날개'), price: 105 },
+        { name: T('Thịt bò', 'Beef', '牛肉', '소고기'), price: 60 },
+      ],
+    },
+    {
+      id: 'chao',
+      icon: '🍚',
+      title: T('Cháo', 'Congee', '粥', '죽'),
+      items: [
+        { name: T('Thịt lăn / Lươn / Phao câu', 'Marinated meat / Eel / Chicken gizzard', '腌肉 / 鳝鱼 / 鸡胗', '양념육 / 장어 / 닭모래주머니'), price: 55 },
+        { name: T('Nhiều thịt', 'Extra meat', '多肉', '고기 많이'), price: 70 },
+        { name: T('Thịt đùi', 'Chicken thigh', '鸡腿肉', '닭다리살'), price: 70 },
+        { name: T('Thịt cánh', 'Chicken wing', '鸡翅肉', '닭날개살'), price: 70 },
+        { name: T('Mề – Tràng – Trứng', 'Gizzard · Intestine · Egg', '鸡胗 · 鸡肠 · 蛋', '모래주머니 · 창자 · 달걀'), price: 55 },
+        { name: T('Thịt đùi – Cánh', 'Thigh & Wing', '鸡腿 · 鸡翅', '닭다리 · 닭날개'), price: 100 },
+        { name: T('Thịt bò', 'Beef', '牛肉', '소고기'), price: 55 },
+        { name: T('Thịt xương nhừ', 'Stewed bone-in meat', '炖烂带骨肉', '푹 익힌 뼈고기'), price: 55 },
+      ],
+    },
+    {
+      id: 'com',
+      icon: '🍛',
+      title: T('Cơm', 'Rice', '米饭', '밥'),
+      items: [
+        { name: T('Thịt lăn / Lươn / Phao câu', 'Marinated meat / Eel / Chicken gizzard', '腌肉 / 鳝鱼 / 鸡胗', '양념육 / 장어 / 닭모래주머니'), price: 60 },
+        { name: T('Nhiều thịt', 'Extra meat', '多肉', '고기 많이'), price: 80 },
+        { name: T('Thịt đùi', 'Chicken thigh', '鸡腿肉', '닭다리살'), price: 75 },
+        { name: T('Thịt cánh', 'Chicken wing', '鸡翅肉', '닭날개살'), price: 75 },
+        { name: T('Thịt đùi – Cánh', 'Thigh & Wing', '鸡腿 · 鸡翅', '닭다리 · 닭날개'), price: 105 },
+      ],
+    },
+    {
+      id: 'xoi',
+      icon: '🍙',
+      title: T('Xôi gà xào nấm', 'Sticky Rice with Chicken', '鸡肉蘑菇糯米饭', '닭버섯 찹쌀밥'),
+      items: [
+        { name: T('Thịt lăn / Lươn / Phao câu', 'Marinated meat / Eel / Chicken gizzard', '腌肉 / 鳝鱼 / 鸡胗', '양념육 / 장어 / 닭모래주머니'), price: 60 },
+        { name: T('Nhiều thịt', 'Extra meat', '多肉', '고기 많이'), price: 80 },
+        { name: T('Thịt đùi', 'Chicken thigh', '鸡腿肉', '닭다리살'), price: 75 },
+        { name: T('Thịt cánh', 'Chicken wing', '鸡翅肉', '닭날개살'), price: 75 },
+        { name: T('Thịt đùi – Cánh', 'Thigh & Wing', '鸡腿 · 鸡翅', '닭다리 · 닭날개'), price: 105 },
+      ],
+    },
+    {
+      id: 'douong',
+      icon: '🥤',
+      title: T('Đồ uống', 'Drinks', '饮品', '음료'),
+      freeNote: {
+        text: T('Trà đá & rau sống free', 'Free iced tea & fresh greens', '免费冰茶与新鲜青菜', '얼음차 · 신선한 채소 무료'),
+        sub: T('Nhân viên phục vụ quý khách tại bàn', 'Served at your table', '服务员为您上桌服务', '직원이 테이블에서 서비스해 드립니다'),
+      },
+      items: [
+        { name: T('Nước lọc chai', 'Bottled water', '瓶装水', '생수'), price: 10 },
+        { name: T('Nước đậu nành', 'Soy milk', '豆奶', '두유'), price: 10 },
+        { name: T('Nước ngọt các loại', 'Soft drinks', '各类汽水', '탄산음료'), price: 15 },
+        { name: T('Bia Heineken', 'Heineken beer', '喜力啤酒', '하이네켄 맥주'), price: 25 },
+        { name: T('Bia Tiger', 'Tiger beer', '虎牌啤酒', '타이거 맥주'), price: 25 },
+      ],
+    },
+    {
+      id: 'dacbiet',
+      icon: '⭐',
+      title: T('Đặc biệt – Gọi thêm', 'Specials & Extras', '特色 · 加点', '특별 · 추가 메뉴'),
+      columns: true,
+      items: [
+        { name: T('Trứng vịt lộn hầm ngải cứu', 'Balut egg with mugwort', '艾草焖鸭仔蛋', '쑥 곁들인 오리알 (발루트)'), price: 15, unit: T('/quả', '/egg', '/个', '/개') },
+        { name: T('Quẩy giòn', 'Crispy fried dough sticks', '油条（脆）', '유자오 (바삭)'), price: 5, unit: T('/3 cái', '/3 pcs', '/3个', '/3개') },
+        {
+          name: T('Quẩy Mà Mây mềm/giòn', 'Mà Mây dough sticks (soft/crispy)', 'Mà Mây 油条（软/脆）', 'Mà Mây 유자오 (부드럽게/바삭하게)'),
+          note: T('Chỉ có vào thứ 7 & CN', 'Weekends only', '仅周六、周日供应', '토·일에만 판매'),
+          price: 10,
+          unit: T('/3 cái', '/3 pcs', '/3个', '/3개'),
+        },
+        { name: T('Trứng chần', 'Poached egg', '水波蛋', '포치드 에그'), price: 10, unit: T('/quả', '/egg', '/个', '/개') },
+        { name: T('Phao câu gà', 'Chicken gizzard', '鸡胗', '닭모래주머니'), price: 10 },
+        { name: T('Chân gà luộc', 'Boiled chicken feet', '水煮鸡脚', '삶은 닭발'), price: 15, unit: T('/cái', '/pc', '/只', '/개') },
+        { name: T('Mề – tràng – trứng chần', 'Gizzard · Intestine · Poached egg', '鸡胗 · 鸡肠 · 水波蛋', '모래주머니 · 창자 · 포치드 에그'), price: 100 },
+        { name: T('Bò chần', 'Blanched beef', '涮牛肉', '데친 소고기'), price: 100 },
+        { name: T('Xương sườn nhừ', 'Stewed soft ribs', '炖烂排骨', '푹 삶은 갈비'), price: 100 },
+        { name: T('Cánh chặt', 'Chopped chicken wings', '切块鸡翅', '닭날개 토막'), price: 50, unit: T('/cái', '/pc', '/只', '/개') },
+        { name: T('Gà chặt ½ con', '½ chicken, chopped', '半只鸡（切块）', '반 마리 닭 (토막)'), price: 300 },
+        { name: T('Đùi gà gốc ta', 'Free-range chicken thigh', '土鸡腿', '토종닭 다리살'), price: 150 },
+      ],
+    },
+  ],
+  baby: {
+    title: T('Cháo dinh dưỡng cho bé', 'Porridge for Babies', '宝宝营养粥', '아기 영양죽'),
+    options: [
+      { text: T('Cháo không gia vị', 'No seasoning', '不加调料', '양념 없음') },
+      { text: T('Cháo để riêng nhân', 'Toppings on the side', '配料分开装', '고명은 따로') },
+      { text: T('Cháo nấu luôn', 'Toppings mixed in', '配料一起煮', '고명 넣어 같이') },
+      { text: T('Sốt nhân', 'Topping surcharge', '加料费', '토핑 추가 요금') },
+      { text: T('Cháo không', 'Plain porridge', '白粥', '백죽') },
+    ],
+    notice: T(
+      'Menu theo ngày — Ba Mẹ xem tại bảng',
+      'Daily menu — parents, check the board',
+      '菜单每日更新 — 请看店内白板',
+      '메뉴는 매일 바뀌어요 — 게시판을 확인하세요'
+    ),
+  },
+  notes: {
+    title: T('Lưu ý', 'Notes', '温馨提示', '안내 사항'),
+    items: [
+      {
+        icon: 'leaf',
+        title: T('Nguyên liệu tươi mỗi ngày', 'Fresh ingredients every day', '每日新鲜食材', '매일 신선한 재료'),
+        desc: T(
+          'Cam kết nguyên liệu tươi sạch, an toàn.',
+          'We commit to fresh, clean and safe ingredients.',
+          '承诺食材新鲜、干净、安全。',
+          '신선하고 깨끗하며 안전한 재료를 약속합니다.'
+        ),
+      },
+      {
+        icon: 'pot',
+        title: T('Nấu từ tâm', 'Cooked from the heart', '用心熬制', '정성으로 끓입니다'),
+        desc: T(
+          'Nước dùng nấu từ xương gà, hầm kỹ trong nồi gia truyền giữ vị ngọt thanh tự nhiên.',
+          'Broth simmered from chicken bones in our family pot — naturally sweet and light.',
+          '汤底用鸡骨慢火细熬，保留自然清甜。',
+          '닭뼈를 오래 우려낸 국물 — 자연 그대로의 담백한 단맛.'
+        ),
+      },
+      {
+        icon: 'heart',
+        title: T('Phục vụ tận tình', 'Attentive service', '贴心服务', '정성껏 모십니다'),
+        desc: T(
+          'Cảm ơn Quý khách đã lựa chọn Phở Mộc!',
+          'Thank you for choosing Phở Mộc!',
+          '感谢您选择 Phở Mộc！',
+          '퍼 목을 선택해 주셔서 감사합니다!'
+        ),
+      },
+    ],
+  },
+}
+
+// ------------------------------------------------------------
+// THỰC ĐƠN TRANG CHỦ (tiếng Việt) — dẫn xuất từ MENU_BOARD để không lệch dữ liệu
+// ------------------------------------------------------------
+export const MENU = MENU_BOARD.categories.map((c) => ({
+  id: c.id,
+  label: c.title.vi,
+  icon: c.icon,
+  items: [
+    ...(c.freeNote
+      ? [{ name: c.freeNote.text.vi, note: c.freeNote.sub.vi, free: true }]
+      : []),
+    ...c.items.map((it) => ({
+      name: it.name.vi,
+      price: it.price,
+      ...(it.unit ? { unit: it.unit.vi } : {}),
+      ...(it.note ? { note: it.note.vi } : {}),
+    })),
+  ],
+}))
 
 // Ảnh thực đơn gốc để xem toàn bộ
 export const MENU_IMAGE = '/images/menu-full.jpg'
