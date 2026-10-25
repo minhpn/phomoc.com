@@ -2065,6 +2065,10 @@ button {
   line-height: 1.45;
 }
 
+.menu-board__free .menu-board__item-vi {
+  margin: 1px auto 2px;
+}
+
 .menu-board__free strong {
   display: block;
   color: var(--green-900);
@@ -2099,6 +2103,20 @@ button {
   gap: 7px;
   font-size: clamp(13px, 1.2vw, 15px);
   line-height: 1.5;
+}
+
+/* Cột tên món: dòng chính (ngôn ngữ đã chọn) + dòng phụ tiếng Việt cho nhân viên */
+.menu-board__item-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.menu-board__item-vi {
+  display: block;
+  font-size: 0.8em;
+  line-height: 1.35;
+  color: var(--brown-600);
 }
 
 .menu-board__item-name {
@@ -2153,6 +2171,16 @@ button {
   font-size: clamp(13px, 1.2vw, 15px);
   font-weight: 600;
   color: var(--ink);
+}
+
+.menu-board__baby-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.menu-board__baby-text .menu-board__item-vi {
+  font-weight: 400;
 }
 
 .menu-board__baby-list svg {

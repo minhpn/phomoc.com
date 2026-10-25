@@ -124,15 +124,27 @@ export default function MenuBoard({ open, onClose }) {
                 {cat.freeNote && (
                   <p className="menu-board__free">
                     <strong>{t(cat.freeNote.text)}</strong>
+                    {lang !== 'vi' && (
+                      <span className="menu-board__item-vi" lang="vi">
+                        {cat.freeNote.text.vi}
+                      </span>
+                    )}
                     <span>{t(cat.freeNote.sub)}</span>
                   </p>
                 )}
                 <ul className="menu-board__list">
                   {cat.items.map((item) => (
-                    <li className="menu-board__item" key={t(item.name)}>
-                      <span className="menu-board__item-name">
-                        {t(item.name)}
-                        {item.note && <em className="menu-board__item-note"> ({t(item.note)})</em>}
+                    <li className="menu-board__item" key={item.name.vi}>
+                      <span className="menu-board__item-text">
+                        <span className="menu-board__item-name">
+                          {t(item.name)}
+                          {item.note && <em className="menu-board__item-note"> ({t(item.note)})</em>}
+                        </span>
+                        {lang !== 'vi' && t(item.name) !== item.name.vi && (
+                          <span className="menu-board__item-vi" lang="vi">
+                            {item.name.vi}
+                          </span>
+                        )}
                       </span>
                       <span className="menu-board__dots" aria-hidden="true" />
                       <span className="menu-board__item-price">
@@ -152,9 +164,16 @@ export default function MenuBoard({ open, onClose }) {
               </p>
               <ul className="menu-board__baby-list">
                 {MENU_BOARD.baby.options.map((o) => (
-                  <li key={t(o.text)}>
+                  <li key={o.text.vi}>
                     <HeartGlyph />
-                    {t(o.text)}
+                    <span className="menu-board__baby-text">
+                      <span>{t(o.text)}</span>
+                      {lang !== 'vi' && t(o.text) !== o.text.vi && (
+                        <span className="menu-board__item-vi" lang="vi">
+                          {o.text.vi}
+                        </span>
+                      )}
+                    </span>
                   </li>
                 ))}
               </ul>
